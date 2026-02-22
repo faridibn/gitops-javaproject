@@ -1,8 +1,8 @@
-name: vprofile actions
+name: gitops-java
 on: workflow_dispatch
 env:
   AWS_REGION: ap-south-1
-  ECR_REPOSITORY: vprofile
+  ECR_REPOSITORY: gitops
   EKS_CLUSTER: farid-cluster
 
 jobs:
@@ -62,5 +62,5 @@ jobs:
           chart-path: helm/vprofilecharts
           namespace: default
           values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
-          name: vprofile-stack    
+          name: giopts-stack    
 
